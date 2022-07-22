@@ -1,0 +1,19 @@
+{
+  "name": "dfl-javascript-metodosdearreglos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch assets/scss:assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emonsalves/DFL-JAVASCRIPT-METODOSDEARREGLOS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emonsalves/DFL-JAVASCRIPT-METODOSDEARREGLOS/issues"
+  },
+  "homepage": "https://github.com/emonsalves/DFL-JAVASCRIPT-METODOSDEARREGLOS#readme"
+}
