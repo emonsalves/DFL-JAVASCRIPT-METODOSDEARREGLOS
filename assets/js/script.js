@@ -121,4 +121,5 @@ function agregarEventoClickButton() { // EVENTO CLICK SOBRE BUTTON PARA OBTENER 
         const boxBtn = document.querySelector(capturado);
         boxBtn.addEventListener("click", () => { eliminarTarea(idBusqueda) })
     }
+    
 }
