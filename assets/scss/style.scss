@@ -252,3 +252,13 @@ p {
     font-size: 1.6rem;
     margin-left: 2rem;
 }
+
+@media screen and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  { 
+
+    h1 {
+       display: none;
+            }
+}
+
