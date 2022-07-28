@@ -34,17 +34,19 @@ function cargarArreglos() { // FUNCION DE CARGA INICIAL DE NUESTRO PROGRAMA
 }
 
 function template(id, descripcion, estado) { // FUNCION TEMPLATE INYECTA EL ARREGLO EN NUESTRO HTML
-    html += `<div class="job" id="job-${id}"> <p>${id}</p> <p id="descripcion-${id}">${descripcion}</p></div>`
+
     if (estado === true) {
+        html += `<div class="job" id="job-${id}"> <p>${id}</p> <p style="text-decoration: line-through; color: red;" id="descripcion-${id}">${descripcion}</p></div>`;
         html2 += `<div class="action" id="action-${id}">
                 <input type="checkbox" class="checkbox" id="check-${id}" checked="true">
                 <button class="btn-delete" id="btn-delete-${id}" type="button"> X </button>
-                </div>`
+                </div>`;
     } else {
+        html += `<div class="job" id="job-${id}"> <p>${id}</p> <p id="descripcion-${id}">${descripcion}</p></div>`;
         html2 += `<div class="action" id="action-${id}">
                 <input type="checkbox" class="checkbox" id="check-${id}">
                 <button class="btn-delete" id="btn-delete-${id}" type="button"> X </button>
-                </div>`
+                </div>`;
     }
     contarTareas();
 }
@@ -83,9 +85,11 @@ function cambioCheck(idCapturado) { // EVENTO CLICK SOBRE NUESTRO CHECKBOX
     if (arregloTareas[index].estado === false) {
         arregloTareas.splice(index, 1, { id: pasoId, descripcion: pasoDescripcion, estado: true });
         document.getElementById(`descripcion-${pasoId}`).style.textDecoration = "line-through";
+        document.getElementById(`descripcion-${pasoId}`).style.color = "red";
     } else {
         arregloTareas.splice(index, 1, { id: pasoId, descripcion: pasoDescripcion, estado: false });
         document.getElementById(`descripcion-${pasoId}`).style.textDecoration = "none";
+        document.getElementById(`descripcion-${pasoId}`).style.color = "white";
     }
     contarTareas();
 }
@@ -117,4 +121,5 @@ function agregarEventoClickButton() { // EVENTO CLICK SOBRE BUTTON PARA OBTENER 
         const boxBtn = document.querySelector(capturado);
         boxBtn.addEventListener("click", () => { eliminarTarea(idBusqueda) })
     }
+    
 }

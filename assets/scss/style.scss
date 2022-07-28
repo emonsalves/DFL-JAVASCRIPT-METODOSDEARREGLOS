@@ -9,7 +9,6 @@ $color-card: #5cb811;
 
 html {
     font-size: 100%;
-    background-color: red;
 }
 
 body {
@@ -20,8 +19,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 100vh;
-    min-height: 100vh;
 }
 
 p {
@@ -63,29 +60,50 @@ small,
 }
 
 .container {
+    margin-top: 1rem;
     display: grid;
-    width: 90%;
-    height: 90%;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+    "titulo titulo titulo"
+    "totales agregar agregar"
+    "totales idTareas idTareas"
+    "totales lista buttons"
+    "totales lista buttons";
+
+    grid-template-columns: 30% 50% 20%;
+    grid-template-rows: 15% 15% 10% 30% 30%;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    background-color: pink;
-    justify-content: center;  
+    justify-content: center; 
+    align-content: center;
+    min-height: 95vh;
+    min-width: 70%;
+    box-shadow: 3px 3px 8px $color-card,
+    -3px -3px 8px $color-card;
+    overflow: hidden;
+    border-radius: 1rem;
 }
 
 .card-header {
-    grid-area: 1 / 1 / 2 / 4; 
+    grid-area: titulo;
     text-align: center;
-    border-bottom: Solid $color-card 1px;
-    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    color: white;
+    box-shadow: 3px 3px 8px $color-card,
+    -3px -3px 8px $color-card;
 }
 
 .card-body {
-    grid-area: 2 / 2 / 3 / 4;
+    grid-area: agregar;
     text-align: center;
     padding: 1rem;
-    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
 #input-tarea {
@@ -99,6 +117,9 @@ small,
     border-radius: 0px;
     box-shadow: 0px 0px 5px rgba(66, 66, 66, .75);
     text-shadow: 0px 0px 5px rgba(66, 66, 66, .75);
+    width: 60%;
+    overflow: hidden;
+    margin-right: 1rem;
 }
 
 #input-tarea {
@@ -116,7 +137,7 @@ small,
     font-family: Arial;
     font-size: 15px;
     font-weight: bold;
-    padding: 6px 24px;
+    padding: 8px 23px;
     text-decoration: none;
     text-shadow: 0px 1px 0px #aade7c;
 }
@@ -142,7 +163,7 @@ small,
     font-family: Arial;
     font-size: 15px;
     font-weight: bold;
-    padding: 6px 24px;
+    padding: 6px 20px;
     text-decoration: none;
     text-shadow: 0px 1px 0px #aade7c;
 }
@@ -158,54 +179,76 @@ small,
 }
 
 .card-total {
-    grid-area: 2 / 1 / 6 / 2; 
+    grid-area: totales;
     display: flex;
     flex-direction: column;
-    background-color: blue;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-shadow: 0px 0px 8px $color-card,
+    0px 0px 8px $color-card;
+    overflow: hidden;
 }
 
 .card-jobs-header {
-    grid-area: 3 / 2 / 4 / 4;
+    grid-area: idTareas;
     display: flex;
+    align-items: center;
+    color: white;
+    box-shadow: 0px 0px 2px $color-card,
+    0px 0px 8px $color-card;
+    overflow: hidden;
 }
 
 .jobs {
-    grid-area: 4 / 2 / 6 / 3; 
+    grid-area:lista;
     display: flex;
-    background-color: yellow;
     flex-wrap:nowrap;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    color: white;
 }
 .job {
     display: flex;
-
 }
 
 .actions {
-    grid-area: 4 / 3 / 6 / 4; 
+    grid-area: buttons;
     display: flex;
-    justify-content: space-evenly;
-    background-color: brown;
     flex-wrap:nowrap;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     justify-content: space-around;
+    color: white;
 }
 
 .action {
     display: flex;
-
 }
 
 .checkbox {
 	top: 0;
 	left: 0;
-	height: 2.78rem;
-	width: 2.77rem;
+	height: 2.5rem;
+	width: 2.5rem;
 	background: rgba(241, 245, 248, 1);
 	transition: background 250ms;
 	border: 1px solid rgba(184, 194, 204, 1);
 	border-radius: 0.125rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+#idD {
+    margin-left: 2rem;
+}
+#idDD {
+    margin-left: 5rem;
+}
+
+p {
+    font-size: 1.6rem;
+    margin-left: 2rem;
 }
