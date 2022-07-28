@@ -1,0 +1,211 @@
+$colorBgk: Black;
+$colorLetter: white;
+$color-card: #5cb811;
+
+* {
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+    background-color: red;
+}
+
+body {
+    background: black;
+    font-family: 'Coming Soon', cursive;
+    font-weight: 400;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vh;
+    min-height: 100vh;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Monospace', sans-serif;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 3.052rem;
+}
+
+h2 {
+    font-size: 2.441rem;
+}
+
+h3 {
+    font-size: 1.953rem;
+}
+
+h4 {
+    font-size: 1.563rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+small,
+.text_small {
+    font-size: 0.8rem;
+}
+
+.container {
+    display: grid;
+    width: 90%;
+    height: 90%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: pink;
+    justify-content: center;  
+}
+
+.card-header {
+    grid-area: 1 / 1 / 2 / 4; 
+    text-align: center;
+    border-bottom: Solid $color-card 1px;
+    background-color: gray;
+}
+
+.card-body {
+    grid-area: 2 / 2 / 3 / 4;
+    text-align: center;
+    padding: 1rem;
+    background-color: green;
+}
+
+#input-tarea {
+    padding: 5px;
+    font-size: 16px;
+    border-width: 1px;
+    border-color: #CCCCCC;
+    background-color: #FFFFFF;
+    color: #000000;
+    border-style: solid;
+    border-radius: 0px;
+    box-shadow: 0px 0px 5px rgba(66, 66, 66, .75);
+    text-shadow: 0px 0px 5px rgba(66, 66, 66, .75);
+}
+
+#input-tarea {
+    outline: none;
+}
+
+#btn-add {
+    box-shadow: inset 0px 1px 0px 0px #caefab;
+    background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+    background-color: #77d42a;
+    border-radius: 6px;
+    border: 1px solid #268a16;
+    cursor: pointer;
+    color: #306108;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #aade7c;
+}
+
+#btn-add:hover {
+    background: linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+    background-color: #5cb811;
+}
+
+#btn-add:active {
+    position: relative;
+    top: 1px;
+}
+
+.btn-delete {
+    box-shadow: inset 0px 1px 0px 0px #caefab;
+    background: linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+    background-color: #77d42a;
+    border-radius: 6px;
+    border: 1px solid #268a16;
+    cursor: pointer;
+    color: #306108;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #aade7c;
+}
+
+.btn-delete:hover {
+    background: linear-gradient(to bottom, #5cb811 5%, #77d42a 100%);
+    background-color: #5cb811;
+}
+
+.btn-delete:active {
+    position: relative;
+    top: 1px;
+}
+
+.card-total {
+    grid-area: 2 / 1 / 6 / 2; 
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+}
+
+.card-jobs-header {
+    grid-area: 3 / 2 / 4 / 4;
+    display: flex;
+}
+
+.jobs {
+    grid-area: 4 / 2 / 6 / 3; 
+    display: flex;
+    background-color: yellow;
+    flex-wrap:nowrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.job {
+    display: flex;
+
+}
+
+.actions {
+    grid-area: 4 / 3 / 6 / 4; 
+    display: flex;
+    justify-content: space-evenly;
+    background-color: brown;
+    flex-wrap:nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.action {
+    display: flex;
+
+}
+
+.checkbox {
+	top: 0;
+	left: 0;
+	height: 2.78rem;
+	width: 2.77rem;
+	background: rgba(241, 245, 248, 1);
+	transition: background 250ms;
+	border: 1px solid rgba(184, 194, 204, 1);
+	border-radius: 0.125rem;
+}
