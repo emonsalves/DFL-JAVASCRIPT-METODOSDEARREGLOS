@@ -25,9 +25,7 @@ window.onload = function () { // FUNCION PARA CUANDO EL HTML ESTE CARGADO EJECUT
 function cargarArreglos() { // FUNCION DE CARGA INICIAL DE NUESTRO PROGRAMA
     html2 = "";
     html = "";
-    for (const tarea of arregloTareas) {
-        template(tarea.id, tarea.descripcion, tarea.estado);
-    }
+    arregloTareas.forEach((indice) => template(indice.id, indice.descripcion, indice.estado));
     inyecionHtml.innerHTML = html;
     inyecionBtns.innerHTML = html2;
     contarTareas();
@@ -37,21 +35,14 @@ function template(id, descripcion, estado) { // FUNCION TEMPLATE INYECTA EL ARRE
 
     if (estado === true) {
         html += `<div class="job" id="job-${id}"> <p>${id}</p> <p style="text-decoration: line-through; color: red;" id="descripcion-${id}">${descripcion}</p></div>`;
-        html2 += `<div class="action" id="action-${id}">
-                <input type="checkbox" class="checkbox" id="check-${id}" checked="true">
-                <button class="btn-delete" id="btn-delete-${id}" type="button"> X </button>
-                </div>`;
+        html2 += `<div class="action" id="action-${id}"><input type="checkbox" class="checkbox" id="check-${id}" checked="true"><button class="btn-delete" id="btn-delete-${id}" type="button"> X </button></div>`;
     } else {
         html += `<div class="job" id="job-${id}"> <p>${id}</p> <p id="descripcion-${id}">${descripcion}</p></div>`;
-        html2 += `<div class="action" id="action-${id}">
-                <input type="checkbox" class="checkbox" id="check-${id}">
-                <button class="btn-delete" id="btn-delete-${id}" type="button"> X </button>
-                </div>`;
+        html2 += `<div class="action" id="action-${id}"><input type="checkbox" class="checkbox" id="check-${id}"><button class="btn-delete" id="btn-delete-${id}" type="button"> X </button></div>`;
     }
-    contarTareas();
-}
+};
 
-function agregar(detalleTarea) { // FUNCION AGREGAR TAREA DENTRO DE NUESTRO ARREGLO
+const agrega = ((detalleTarea) => {
     if (detalleTarea === null || detalleTarea === undefined || detalleTarea === "") {
         alert("Debe ingresar el nombre de la tarea");
         return;
@@ -62,7 +53,7 @@ function agregar(detalleTarea) { // FUNCION AGREGAR TAREA DENTRO DE NUESTRO ARRE
     }
     cargarArreglos();
     contarTareas();
-}
+})
 
 function contarTareas() { // FUNCION PARA CONTAR LAS TAREAS
     const totalTareas = arregloTareas.length;
@@ -72,7 +63,7 @@ function contarTareas() { // FUNCION PARA CONTAR LAS TAREAS
 }
 
 boxButton.addEventListener("click", () => { // EVENTO CLICK SOBRE NUESTRO BUTTON AGREGAR
-    agregar(boxInput.value);
+    agrega(boxInput.value);
     agregarEventoClickCheckbox();
     agregarEventoClickButton();
     document.querySelector("#input-tarea").value = "";
@@ -121,5 +112,4 @@ function agregarEventoClickButton() { // EVENTO CLICK SOBRE BUTTON PARA OBTENER 
         const boxBtn = document.querySelector(capturado);
         boxBtn.addEventListener("click", () => { eliminarTarea(idBusqueda) })
     }
-    
 }
